@@ -1,0 +1,107 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  --color-white: hsl(0, 0%, 100%);
+  --color-light-pink: hsl(275, 100%, 97%);
+  --color-grayish-purple: hsl(292, 16%, 49%);
+  --color-deep-purple: hsl(293, 72%, 44%);
+  --color-dark-purple: hsl(292, 42%, 14%);
+}
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Work Sans', sans-serif;
+  height: 100vh;
+  background-color: var(--color-light-pink);
+}
+
+.faqs {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-image: url(images/background-pattern-mobile.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: var(--color-light-pink);
+}
+
+.faqs__wrapper {
+  max-width: 90%;
+  padding: 1.25rem;
+  background-color: var(--color-white);
+  border-radius: 0.75rem;
+}
+
+.faqs__heading-icon {
+  max-width: 1.5rem;
+}
+.faqs__heading-title {
+  font-size: 2rem;
+}
+@media screen and (min-width: 50rem) {
+  .faqs {
+    background-image: url(images/background-pattern-desktop.svg);
+  }
+  .faqs__wrapper {
+    width: 50rem;
+  }
+}
+.faqs__heading {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.75rem;
+}
+.faq-list__title {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  font-weight: 700;
+  padding-block: 1.25rem;
+  color: var(--color-dark-purple);
+  cursor: pointer;
+}
+.faq-list__title-text:hover {
+  color: var(--color-deep-purple);
+}
+.faq-list__description {
+  color: var(--color-grayish-purple);
+  margin-bottom: 1.5rem;
+  display: none;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  letter-spacing: 0.0625rem;
+  font-weight: 300;
+}
+.faq-list::after {
+  content: '';
+  display: block;
+  border: 1px solid var(--color-light-pink);
+}
+.faq-list:last-child::after {
+  display: none;
+}
+.attribution {
+  display: flex;
+  justify-content: center;
+  font-size: 11px;
+  text-align: center;
+  position: relative;
+  top: 1.5rem;
+  color: var(--color-dark-purple);
+}
+.attribution a {
+  color: var(--color-deep-purple);
+}
+.attribution a:hover {
+  color: var(--color-dark-purple);
+}

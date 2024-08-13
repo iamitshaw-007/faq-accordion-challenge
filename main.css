@@ -76,11 +76,17 @@ body {
 .faq-list__description {
   color: var(--color-grayish-purple);
   margin-bottom: 1.5rem;
-  display: none;
   font-size: 0.875rem;
   line-height: 1.25rem;
   letter-spacing: 0.0625rem;
   font-weight: 300;
+  transition: all 0.2s ease-in-out;
+}
+.faq-list__description--collapse {
+  margin-bottom: 0;
+  visibility: hidden;
+  height: 0;
+  opacity: 0;
 }
 .faq-list::after {
   content: '';

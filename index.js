@@ -10,12 +10,17 @@ faqAccordianList.forEach((faqAccordian) => {
       const faqIconElement = faqAccordian.querySelector(
         '.faq-list__title-icon'
       );
-      if (faqDescriptionElement.style.display === 'block') {
-        faqDescriptionElement.style.display = 'none';
-        faqIconElement.src = 'images/icon-plus.svg';
-      } else {
-        faqDescriptionElement.style.display = 'block';
+      if (
+        faqDescriptionElement.classList.contains(
+          'faq-list__description--collapse'
+        )
+      ) {
         faqIconElement.src = 'images/icon-minus.svg';
+        faqIconElement.alt = 'Minus Icon Illustration';
+      } else {
+        faqIconElement.src = 'images/icon-plus.svg';
+        faqIconElement.alt = 'Plus Icon Illustration';
       }
+      faqDescriptionElement.classList.toggle('faq-list__description--collapse');
     });
 });
